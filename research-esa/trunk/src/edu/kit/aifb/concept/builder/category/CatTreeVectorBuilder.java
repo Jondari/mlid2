@@ -26,13 +26,13 @@ public abstract class CatTreeVectorBuilder implements
 	
 	int rootCategoryId = -1;
 	
-	MLCategoryTree tree;
+	public MLCategoryTree tree;
 	int size;
 	
 	MLCFactory factory;
 	IConceptIndex conceptIndex;
 	
-	double[] scores;
+	public double[] scores;
 	String docName;
 	
 	public void setRootCategoryId( int id ) {

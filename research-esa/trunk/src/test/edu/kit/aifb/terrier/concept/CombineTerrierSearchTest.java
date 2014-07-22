@@ -1,4 +1,4 @@
-package edu.kit.aifb.terrier.concept;
+package test.edu.kit.aifb.terrier.concept;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.terrier.structures.Index;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
 import edu.kit.aifb.concept.IConceptExtractor;
 import edu.kit.aifb.concept.IConceptVector;
 import edu.kit.aifb.concept.builder.FixedSizeConceptVectorBuilder;

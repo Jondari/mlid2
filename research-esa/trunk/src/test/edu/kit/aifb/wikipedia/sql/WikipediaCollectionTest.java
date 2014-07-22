@@ -1,4 +1,4 @@
-package edu.kit.aifb.wikipedia.sql;
+package test.edu.kit.aifb.wikipedia.sql;
 
 import junit.framework.Assert;
 
@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import edu.kit.aifb.document.ICollectionIterator;
+import edu.kit.aifb.wikipedia.sql.WikipediaCollection;
 
 public class WikipediaCollectionTest {
 

@@ -1,13 +1,11 @@
-package edu.kit.aifb.wikipedia.wpm;
+package test.edu.kit.aifb.wikipedia.wpm;
 
 import junit.framework.Assert;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
 import edu.kit.aifb.document.ICollection;
 import edu.kit.aifb.document.ICollectionIterator;
 import edu.kit.aifb.document.IDocument;

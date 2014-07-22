@@ -1,4 +1,4 @@
-package edu.kit.aifb.concept.builder.category;
+package test.edu.kit.aifb.concept.builder.category;
 
 import java.sql.SQLException;
 import java.util.Collection;
@@ -9,9 +9,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
 import edu.kit.aifb.concept.IConceptIterator;
 import edu.kit.aifb.concept.IConceptVector;
+import edu.kit.aifb.concept.builder.category.MaxScoreTopDownCatTreeVectorBuilder;
+import edu.kit.aifb.concept.builder.category.MeanScoreTopDownCatTreeVectorBuilder;
 import edu.kit.aifb.terrier.concept.TerrierESAIndex;
 import edu.kit.aifb.wikipedia.mlc.MLCDatabase;
 import edu.kit.aifb.wikipedia.mlc.MLCFactory;

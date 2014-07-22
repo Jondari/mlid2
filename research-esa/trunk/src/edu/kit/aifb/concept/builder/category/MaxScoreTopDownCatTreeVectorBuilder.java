@@ -24,6 +24,7 @@ public class MaxScoreTopDownCatTreeVectorBuilder extends
 	}
 	
 	@Override
+	public
 	void propagateScores( double[] scores ) {
 		logger.debug( "Using tree to propagate scores" );
 		TIntArrayList orderedCatIds = tree.getLeafOrderedDocIds();

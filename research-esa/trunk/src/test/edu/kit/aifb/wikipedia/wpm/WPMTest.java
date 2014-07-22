@@ -1,4 +1,4 @@
-package edu.kit.aifb.wikipedia.wpm;
+package test.edu.kit.aifb.wikipedia.wpm;
 
 import java.sql.SQLException;
 
@@ -10,7 +10,7 @@ import org.wikipedia.miner.model.Article;
 import org.wikipedia.miner.model.Page;
 import org.wikipedia.miner.model.Wikipedia;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
 
 public class WPMTest {
 
@@ -27,17 +27,17 @@ public class WPMTest {
 	
 	@Test
 	public void specialCharacters() throws SQLException {
-		Page p = germanWp.getArticleByTitle( "Fähre" );
+		Page p = germanWp.getArticleByTitle( "Fï¿½hre" );
 		Assert.assertNotNull( p );
-		Assert.assertEquals( "Fähre", p.getTitle() );
+		Assert.assertEquals( "Fï¿½hre", p.getTitle() );
 		
 		p = germanWp.getPageById( 16373 );
 		Assert.assertNotNull( p );
-		Assert.assertEquals( "Fähre", p.getTitle() );
+		Assert.assertEquals( "Fï¿½hre", p.getTitle() );
 		
 		p = englishWp.getPageById( 771172 );
 		Assert.assertNotNull( p );
-		Assert.assertEquals( "Hunter × Hunter", p.getTitle() );
+		Assert.assertEquals( "Hunter ï¿½ Hunter", p.getTitle() );
 	}
 	
 	@Test

@@ -17,6 +17,7 @@ public class MeanScoreTopDownCatTreeVectorBuilder extends
 	}
 	
 	@Override
+	public
 	void propagateScores( double[] scores ) {
 		int[] treeSize = new int[scores.length];
 		

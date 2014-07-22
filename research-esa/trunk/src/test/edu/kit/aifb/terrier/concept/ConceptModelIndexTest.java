@@ -1,4 +1,4 @@
-package edu.kit.aifb.terrier.concept;
+package test.edu.kit.aifb.terrier.concept;
 
 
 
@@ -16,7 +16,7 @@ import org.terrier.structures.Lexicon;
 import org.terrier.structures.LexiconEntry;
 import org.terrier.structures.MetaIndex;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
 import edu.kit.aifb.concept.IConceptIterator;
 import edu.kit.aifb.concept.IConceptVector;
 import edu.kit.aifb.document.DocumentListCollection;
@@ -24,6 +24,7 @@ import edu.kit.aifb.document.TextDocument;
 import edu.kit.aifb.nlp.DummyAnalyzer;
 import edu.kit.aifb.nlp.Language;
 import edu.kit.aifb.terrier.TerrierIndexFactory;
+import edu.kit.aifb.terrier.concept.TerrierConceptModelIndex;
 import edu.uka.aifb.concept.model.RtfIdfFixedSizeConceptModel;
 
 public class ConceptModelIndexTest {

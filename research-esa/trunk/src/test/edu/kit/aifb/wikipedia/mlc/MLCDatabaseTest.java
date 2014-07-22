@@ -1,8 +1,9 @@
-package edu.kit.aifb.wikipedia.mlc;
+package test.edu.kit.aifb.wikipedia.mlc;
 
 import org.junit.Before;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
+import edu.kit.aifb.wikipedia.mlc.MLCDatabase;
 
 public class MLCDatabaseTest {
 

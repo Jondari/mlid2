@@ -1,4 +1,4 @@
-package edu.kit.aifb.concept.builder;
+package test.edu.kit.aifb.concept.builder;
 
 import junit.framework.Assert;
 
@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.kit.aifb.concept.IConceptVector;
+import edu.kit.aifb.concept.builder.FixedSizeConceptVectorBuilder;
 
 public class FixedSizeConceptVectorBuilderTest {
 

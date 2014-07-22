@@ -1,4 +1,4 @@
-package edu.kit.aifb;
+package test.edu.kit.aifb;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

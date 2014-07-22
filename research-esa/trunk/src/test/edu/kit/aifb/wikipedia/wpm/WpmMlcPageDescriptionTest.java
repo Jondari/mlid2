@@ -1,12 +1,13 @@
-package edu.kit.aifb.wikipedia.wpm;
+package test.edu.kit.aifb.wikipedia.wpm;
 
 import junit.framework.Assert;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
 import edu.kit.aifb.nlp.Language;
+import edu.kit.aifb.wikipedia.wpm.WpmMlcPageDescription;
 
 public class WpmMlcPageDescriptionTest {
 
@@ -20,17 +21,17 @@ public class WpmMlcPageDescriptionTest {
 
 	@Test
 	public void specialCharacters() throws Exception {
-		/*Page p = germanWp.getArticleByTitle( "Fähre" );
+		/*Page p = germanWp.getArticleByTitle( "Fï¿½hre" );
 		Assert.assertNotNull( p );
-		Assert.assertEquals( "Fähre", p.getTitle() );
+		Assert.assertEquals( "Fï¿½hre", p.getTitle() );
 		
 		p = germanWp.getPageById( 16373 );
 		Assert.assertNotNull( p );
-		Assert.assertEquals( "Fähre", p.getTitle() );*/
+		Assert.assertEquals( "Fï¿½hre", p.getTitle() );*/
 		
 		
 		String d = desc.getDescription( "182015", Language.EN );
-		Assert.assertEquals( "Hunter × Hunter", d );
+		Assert.assertEquals( "Hunter ï¿½ Hunter", d );
 	}
 	
 }

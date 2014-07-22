@@ -1,4 +1,4 @@
-package edu.kit.aifb.wikipedia.mlc;
+package test.edu.kit.aifb.wikipedia.mlc;
 
 import java.sql.SQLException;
 
@@ -7,7 +7,9 @@ import junit.framework.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
+import edu.kit.aifb.wikipedia.mlc.MLCFactory;
+import edu.kit.aifb.wikipedia.mlc.MLCategory;
 
 public class MLCFactoryTest {
 

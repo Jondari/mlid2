@@ -1,12 +1,10 @@
-package edu.kit.aifb.terrier.concept;
+package test.edu.kit.aifb.terrier.concept;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
 import edu.kit.aifb.concept.IConceptExtractor;
 import edu.kit.aifb.concept.IConceptIterator;
 import edu.kit.aifb.concept.IConceptVector;
@@ -48,7 +46,7 @@ public class TerrierESAIndexTest {
 		IConceptExtractor extractor = terrierESAIndexEN.getConceptExtractor();
 
 		TextDocument query = new TextDocument( "query" );
-		query.setText( "query", Language.EN, "Königsplatz" );
+		query.setText( "query", Language.EN, "Kï¿½nigsplatz" );
 		
 		IConceptVector cv = extractor.extract( query );
 		IConceptIterator it = cv.iterator();

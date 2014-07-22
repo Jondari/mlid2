@@ -1,10 +1,14 @@
-package edu.kit.aifb.wikipedia.sql;
+package test.edu.kit.aifb.wikipedia.sql;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import edu.kit.aifb.TestContextManager;
+import test.edu.kit.aifb.TestContextManager;
+import edu.kit.aifb.wikipedia.sql.IPage;
+import edu.kit.aifb.wikipedia.sql.Page;
+import edu.kit.aifb.wikipedia.sql.PropertyNotInitializedException;
+import edu.kit.aifb.wikipedia.sql.WikipediaDatabase;
 
 public class WikipediaDatabaseTest {
 
@@ -31,13 +35,13 @@ public class WikipediaDatabaseTest {
 	
 	@Test
 	public void specialCharacters() throws PropertyNotInitializedException {
-		IPage p = germanWp.getArticle( "Fähre" );
+		IPage p = germanWp.getArticle( "Fï¿½hre" );
 		Assert.assertEquals( 16373, p.getId() );
-		Assert.assertEquals( "Fähre", p.getTitle() );
+		Assert.assertEquals( "Fï¿½hre", p.getTitle() );
 		
 		p = new Page( 16373 );
 		germanWp.initializePage( p );
-		Assert.assertEquals( "Fähre", p.getTitle() );
+		Assert.assertEquals( "Fï¿½hre", p.getTitle() );
 	}
 	
 }

@@ -1,4 +1,4 @@
-package edu.kit.aifb.concept.index;
+package test.edu.kit.aifb.concept.index;
 
 
 
@@ -10,6 +10,10 @@ import org.junit.Test;
 import org.terrier.matching.ResultSet;
 
 import edu.kit.aifb.concept.TroveConceptVector;
+import edu.kit.aifb.concept.index.ConceptMatcher;
+import edu.kit.aifb.concept.index.ICVIndexEntryIterator;
+import edu.kit.aifb.concept.index.IndexedFileCVIndexBuilder;
+import edu.kit.aifb.concept.index.IndexedFileCVIndexReader;
 import edu.kit.aifb.concept.scorer.CosineScorer;
 import edu.kit.aifb.ir.IMatch;
 import edu.kit.aifb.nlp.Language;
