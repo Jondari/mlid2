@@ -92,7 +92,10 @@ public class WriteESAVector {
 							index.getConceptName(it.getId()),
 							index.getLanguage());
 					
-					String vectorLine = it.getValue() + "\t" + d + " ("
+					//String vectorLine = it.getValue() + "\t" + d + " ("
+						//	+ index.getConceptName(it.getId()) + ")";
+					
+					String vectorLine = it.getValue() + " " + d + " ("
 							+ index.getConceptName(it.getId()) + ")";
 					
 					System.out.println(vectorLine);

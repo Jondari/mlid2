@@ -73,6 +73,7 @@
 	<classpathentry kind="lib" path="trunk/lib/lucene-snowball-3.0.3.jar"/>
 	<classpathentry kind="lib" path="trunk/lib/hadoop18.2-joined.jar"/>
 	<classpathentry kind="lib" path="trunk/lib/fileUtil.jar"/>
+	<classpathentry kind="lib" path="trunk/lib/coupleUtil.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

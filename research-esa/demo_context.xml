@@ -55,13 +55,13 @@
 
   <bean id="wikipedia_database_en" class="edu.kit.aifb.wikipedia.sql.WikipediaDatabase">
     <property name="language" ref="language_en"/>
-    <property name="database" value="wiki"/>
+    <property name="database" value="wiki_en"/>
   </bean>
  
   <bean id="wikipedia_full_collection_en" class="edu.kit.aifb.wikipedia.sql.WikipediaCollection"
                 init-method="readArticles">
     <property name="wikipediaDatabase" ref="wikipedia_database_en"/>
-    <property name="articleIdTable" value="wiki.page"/>
+    <property name="articleIdTable" value="wiki_en.page"/>
     <property name="articleIdColumn" value="page_id"/>
   </bean>
   
