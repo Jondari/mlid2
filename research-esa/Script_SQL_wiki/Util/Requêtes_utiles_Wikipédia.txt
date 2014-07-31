@@ -1,0 +1,60 @@
+
+// on récupère l'id du texte de la page 2484
+select rev_text_id from revision where rev_page=2484;
+
+// on affiche le texte de la page
+select old_text from text where old_id=2484;
+
+//obtenir le texte d'un article en fonction de l'id d'une page
+select old_text from text inner join revision on old_id=rev_text_id and rev_page=686 limit 1;
+
+//obtenir le nom d'un article et son texte en fonction de l'id d'une page
+select page_title, old_text from text inner join revision on old_id=rev_text_id and rev_page=686 join page on page_id=rev_page limit 1;
+
+//obtenir le texte d'un article en fonction de son nom
+select old_text from text inner join revision on old_id=rev_text_id join page on page_title='atm' and rev_page=page_id;
+
+//obtenir le titrle de l'article, son id_texte et son id_page en fonction de son nom
+select page_title,page_id,old_id from text inner join revision on old_id=rev_text_id join page on page_title='atm' and rev_page=page_id;
+
+// afficher les doublons
+SELECT   COUNT(*) AS nbr_doublon, from_lang, from_title, to_lang, to_title
+FROM     suggestions
+GROUP BY from_lang, from_title, to_lang, to_title
+HAVING   COUNT(*) > 1;
+
+//insertion des données de suggestions dans la table suggestions2
+INSERT INTO suggestions2
+SELECT 0,from_lang, from_title, to_lang, to_title
+from suggestions
+WHERE from_lang='zh';
+
+//supression des doublon dans la table suggestions2
+DELETE suggestions2 FROM suggestions2
+LEFT OUTER JOIN (
+        SELECT MIN(id) as id,from_lang,from_title,to_lang,to_title
+        FROM suggestions2
+        GROUP BY from_lang,from_title,to_lang,to_title
+    ) AS table_1
+    ON suggestions2.id = table_1.id
+WHERE table_1.id IS NULL;
+SELECT 'Suppression des doublons terminé';
+
+
+/* requête qui affiche les articles commun entre le français et l'anglais et le français et le chinois  cad l'intersection entre les 3 langues*/
+select * from suggestions2 as sugg1 inner join suggestions2 as sugg2 on sugg1.from_lang='fr' and sugg1.to_lang='en' and sugg1.from_title =sugg2.from_title and sugg2.to_lang='zh';
+
+/* récupérer le titre des articles français communs au français anglais et chinois */
+select sugg1.from_title from suggestions2 as sugg1 inner join suggestions2 as sugg2 on sugg1.from_lang='fr' and sugg1.to_lang='en' and sugg1.from_title =sugg2.from_title and sugg2.to_lang='zh';
+
+/* récupérer le titre des articles anglais communs au français anglais et chinois */
+select sugg1.to_title from suggestions2 as sugg1 inner join suggestions2 as sugg2 on sugg1.from_lang='fr' and sugg1.to_lang='en' and sugg1.from_title =sugg2.from_title and sugg2.to_lang='zh';
+
+/* récupérer le titre des articles chinois communs au français anglais et chinois */
+select sugg2.to_title from suggestions2 as sugg1 inner join suggestions2 as sugg2 on sugg1.from_lang='fr' and sugg1.to_lang='en' and sugg1.from_title =sugg2.from_title and sugg2.to_lang='zh';
+
+/* sélectionne les élément présent dans common_page mais pas dans la base de donnée commune */
+select distinct cp_title from inter0002.common_page_zh inner join wiki_common_zh.page on page_title!=cp_title;
+
+
+
