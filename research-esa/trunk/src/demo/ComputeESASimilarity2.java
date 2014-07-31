@@ -83,11 +83,12 @@ public class ComputeESASimilarity2 {
 		Map<String, Double> map = new HashMap<String, Double>();
 
 		int i = 0;
-		int j = 0;
+		int j;
 		for (String crtText1 : dirText1) {
 			String crtNameFile1 = nameFile1.get(i).substring(0,
 					nameFile1.get(i).length() - 4)
 					+ "_d1";
+			j = 0;
 			for (String crtText2 : dirText2) {
 				String crtNameFile2 = nameFile2.get(j).substring(0,
 						nameFile2.get(j).length() - 4)
@@ -119,7 +120,7 @@ public class ComputeESASimilarity2 {
 					String key = crtNameFile1 + "/" + crtNameFile2;
 
 					double value = sim.calcSimilarity(cvA, cvB);
-					System.out.println("ESA Similarity: " + value);
+					System.out.println("ESA Similarity: " + value + "\n");
 
 					map.put(key, value);
 
@@ -129,6 +130,7 @@ public class ComputeESASimilarity2 {
 			i++;
 		}
 
+		logger.info("Writting report");
 		Iterator iterator = map.entrySet().iterator();
 
 		while (iterator.hasNext()) {

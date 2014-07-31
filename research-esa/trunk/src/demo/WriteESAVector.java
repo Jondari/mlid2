@@ -1,5 +1,6 @@
 package demo;
 
+import java.io.File;
 import java.util.List;
 
 import org.apache.commons.configuration.Configuration;
@@ -32,8 +33,17 @@ public class WriteESAVector {
 	 */
 	public static void main(String[] args) throws Exception {
 		try {
+			// ApplicationContext context = new FileSystemXmlApplicationContext(
+			// "*_context.xml");
+
+			// Utilisation index anglais
+			// ApplicationContext context = new FileSystemXmlApplicationContext(
+			// "en_context.xml");
+
+			// Utilisation index français
 			ApplicationContext context = new FileSystemXmlApplicationContext(
-					"*_context.xml");
+					"fr_context.xml");
+
 			ConfigurationManager confMan = (ConfigurationManager) context
 					.getBean(ConfigurationManager.class);
 			confMan.parseArgs(args);
@@ -62,7 +72,7 @@ public class WriteESAVector {
 					+ config.getString("dirSource"));
 			// on récupère le chein vers le dossier source
 			String dirSource = config.getString("dirSource");
-			
+
 			String dirDest = config.getString("dirDest");
 
 			String separator = System.getProperty("file.separator");
@@ -91,17 +101,31 @@ public class WriteESAVector {
 					String d = description.getDescription(
 							index.getConceptName(it.getId()),
 							index.getLanguage());
-					
-					//String vectorLine = it.getValue() + "\t" + d + " ("
-						//	+ index.getConceptName(it.getId()) + ")";
-					
+
+					// String vectorLine = it.getValue() + "\t" + d + " ("
+					// + index.getConceptName(it.getId()) + ")";
+					String val = "" + it.getValue();
+
 					String vectorLine = it.getValue() + " " + d + " ("
 							+ index.getConceptName(it.getId()) + ")";
-					
+
 					System.out.println(vectorLine);
-					
-					FileUtil.writeText(dirDest+separator+nameCrtFile+"Vector.txt", vectorLine, true);
-					FileUtil.writeText(dirDest+separator+nameCrtFile+"Vector.txt", "\n", true);
+
+					String pathCol1 = dirDest + separator + "col1";
+					File col1 = new File(pathCol1);
+					if (!col1.exists()) {
+						col1.mkdir();
+					}
+
+					FileUtil.writeText(dirDest + separator + nameCrtFile
+							+ "Vector.txt", vectorLine, true);
+					FileUtil.writeText(dirDest + separator + nameCrtFile
+							+ "Vector.txt", "\n", true);
+
+					FileUtil.writeText(pathCol1 + separator + nameCrtFile
+							+ "Vector.txt", val, true);
+					FileUtil.writeText(pathCol1 + separator + nameCrtFile
+							+ "Vector.txt", "\n", true);
 				}
 				i++;
 			}
